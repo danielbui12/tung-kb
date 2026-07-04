@@ -49,3 +49,23 @@ Key correction surfaced and recorded: "the network heals lost replicas" is true 
 FALSE for Filecoin (each replica is an independently sealed sector; durability = incentives + client-side
 redundancy). New dangling link `[[forwarding-kademlia]]` introduced (Swarm's recursive routing variant) —
 a reasonable future page. index.md updated with a new "Sync, transfer & repair" concept section.
+
+## [2026-07-04] ingest | Erasure coding algorithms comparison (MDS, LRC, regenerating, fountain, LDPC)
+
+Ingested a composed study-notes source comparing the full erasure-coding family. Created
+[[erasure-coding-algorithms-comparison]] and promoted four previously-dangling concepts to real pages:
+[[mds-code]] (Singleton bound), [[local-reconstruction-codes]] (LRC, read-count repair axis),
+[[regenerating-codes]] (MSR/MBR, bytes-per-helper repair axis), [[fountain-codes]] (LT/Raptor/RaptorQ,
+rateless). Added [[ldpc]] as a new transmission-side concept and [[azure-storage]] as a new entity
+(production LRC `(12,2,2)` reference).
+
+Updated for cross-links and new-source citations: [[erasure-coding]], [[reed-solomon]],
+[[repair-bandwidth]] (trimmed to link out to the new LRC/regenerating pages instead of duplicating),
+[[ceph]], [[hdfs]] (added RS(6,3)/RS(10,4) param note), [[storj]], [[walrus]].
+
+Topic updates: [[storage-redundancy-and-durability]] gained a storage-vs-transmission split and a
+resolved (partially) open question on fountain codes vs RS. [[decentralized-storage-networks]] gained
+an explicit "fixed-`n` vs rateless" axis of variation, answering why Storj/Walrus chose RS over
+fountain codes despite their P2P churn superficially fitting a rateless code — flagged as an inference
+from two examples, not a general law. index.md updated (2 new concept-section entries, 1 new entity,
+1 new source).

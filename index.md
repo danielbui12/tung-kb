@@ -1,7 +1,7 @@
 ---
 title: Index
 type: index
-updated: 2026-06-19
+updated: 2026-07-04
 ---
 # Index — tung-kb
 
@@ -42,6 +42,11 @@ _Techniques, algorithms, patterns, principles._
 ### Redundancy & durability
 - [[erasure-coding]] — split into k+m fragments; any k of n reconstruct, tolerating m losses.
 - [[reed-solomon]] — the canonical MDS erasure code (Galois-field polynomial math).
+- [[mds-code]] — Maximum Distance Separable: the Singleton-bound ceiling for storage efficiency.
+- [[local-reconstruction-codes]] — LRC: local parity groups for cheap single-loss repair reads (Azure).
+- [[regenerating-codes]] — MSR/MBR: cut repair bytes-per-helper via network coding (Ceph Clay).
+- [[fountain-codes]] — rateless LT/Raptor/RaptorQ; no fixed `n`, built for broadcast/lossy channels.
+- [[ldpc]] — sparse-graph channel code; near-capacity throughput, tuned for transmission not storage.
 - [[raid]] — disk-array redundancy; RAID-5/6 are fixed-recipe erasure codes in one box.
 - [[redundancy]] — controlled extra storage so a surviving subset reconstructs the whole.
 - [[replication]] — keeping whole copies (e.g. 3×); simple but storage-heavy.
@@ -112,6 +117,7 @@ _Tools, libraries, frameworks, systems, languages, people._
 - [[ipfs]] — content-addressing + P2P transport substrate (no persistence guarantee).
 - [[ceph]] — distributed storage with erasure-coded pools (hosts Clay codes).
 - [[hdfs]] — Hadoop FS with native Reed-Solomon + LRC erasure coding.
+- [[azure-storage]] — Microsoft cloud storage; production reference for LRC (12,2,2).
 
 ### Libraries, protocols & standards
 - [[ipld]] — InterPlanetary Linked Data; codecs for content-addressed Merkle DAGs.
@@ -156,6 +162,7 @@ _One summary page per ingested source._
 - [[merkle-dags-tutorial]] — ProtoSchool: DAGs, Merkle DAGs, dedup, chunking, IPLD (docs).
 - [[anatomy-of-a-cid-tutorial]] — ProtoSchool: CID byte anatomy and multiformats (docs).
 - [[filecoin-spec]] — the Filecoin Specification: VM, markets, sealing, PoRep/PoSt, consensus (docs).
+- [[erasure-coding-algorithms-comparison]] — comparative survey of RS/LRC/regenerating/fountain/LDPC codes (note).
 
 ## Questions
 _Filed-back explorations from queries._

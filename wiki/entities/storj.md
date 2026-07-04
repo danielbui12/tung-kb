@@ -3,9 +3,9 @@ title: Storj
 type: entity
 tags: [decentralized-storage, object-storage, erasure-coding, s3-compatible]
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-07-04
 status: active
-sources: [storj-v3, storj-v2, object-storage-domain-knowledge]
+sources: [storj-v3, storj-v2, object-storage-domain-knowledge, erasure-coding-algorithms-comparison]
 ---
 # Storj
 
@@ -20,7 +20,10 @@ Storj is one of the [[decentralized-storage-networks]], built by [[storj-labs]].
 
 Unlike [[filecoin]]'s heavy trustless zk-SNARK proofs or [[arweave]]'s permanence, Storj favors lightweight economic audits and is the only one of the five DSNs private by default (encrypting paths and metadata too). Token: STORJ (ERC-20 on [[ethereum]]). Compare [[swarm]] (Kademlia neighborhood replication) and [[walrus]] (2-D erasure coding).
 
+Notably, Storj chose Reed-Solomon over [[fountain-codes]] despite its churning, unpredictable peer set superficially fitting a rateless code better — evidence that MDS optimality and mature tooling win once a storage network's "channel" is provisioned enough to fix `n` in advance.
+
 ## Sources
 - [[storj-v3]] — v3 framework, Satellites/Uplinks/nodes, audits, RS parameters
 - [[storj-v2]] — v2 Kademlia/contract/micropayment architecture, Merkle audits
 - [[object-storage-domain-knowledge]] — comparative parameters and durability figures
+- [[erasure-coding-algorithms-comparison]] — RS-over-fountain-codes choice for P2P/churning storage

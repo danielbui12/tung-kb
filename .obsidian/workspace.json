@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "6eabcb49a4ce0f98",
+        "id": "5357c25b640a37a2",
         "type": "tabs",
         "children": [
           {
-            "id": "8cb5d136e51f7b27",
+            "id": "820043325768ccbe",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -179,8 +179,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "8cb5d136e51f7b27",
+  "active": "820043325768ccbe",
   "lastOpenFiles": [
+    "wiki/entities/azure-storage.md",
+    "wiki/concepts/ldpc.md",
+    "wiki/concepts/fountain-codes.md",
+    "wiki/concepts/regenerating-codes.md",
+    "wiki/concepts/local-reconstruction-codes.md",
+    "wiki/concepts/mds-code.md",
+    "wiki/sources/erasure-coding-algorithms-comparison.md",
+    "raw/Erasure-coding-algorithms-comparision.composed.md",
+    "wiki/entities/swarm.md",
     "index.md",
     "raw/storjv2.md",
     "raw/storjv3.md",

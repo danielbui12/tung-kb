@@ -3,9 +3,9 @@ title: Decentralized Storage Networks
 type: topic
 tags: [decentralized-storage, object-storage, blockchain, comparison]
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-07-04
 status: active
-sources: [object-storage-domain-knowledge, storj-v2, storj-v3, filecoin-spec, arweave-yellow-paper, arweave-2-9, book-of-swarm, swarm-whitepaper, swarm-protocol-spec]
+sources: [object-storage-domain-knowledge, storj-v2, storj-v3, filecoin-spec, arweave-yellow-paper, arweave-2-9, book-of-swarm, swarm-whitepaper, swarm-protocol-spec, erasure-coding-algorithms-comparison]
 ---
 # Decentralized Storage Networks
 
@@ -32,6 +32,7 @@ The four networks in this wiki, plus the [[walrus]] and [[ipfs]] reference point
 - **Durability mechanism.** [[storj]]/[[walrus]] lean on [[erasure-coding]] (low overhead, needs a read quorum); [[filecoin]] keeps full unique replicas per [[sector]]; [[arweave]] relies on emergent redundancy from many miners each wanting recall-block coverage; [[swarm]] uses proximity-based replication of 4 KB [[chunk]]s.
 - **Trust placement.** [[storj]] concedes a trusted-but-blind coordinator ([[satellite]]) for metadata and audits, explicitly avoiding a blockchain on the hot path ([[coordination-avoidance]]). [[filecoin]]/[[arweave]]/[[swarm]] are fully on-chain-coordinated.
 - **Workload.** [[filecoin]]/[[arweave]] target bulk/cold/archival storage; [[swarm]] targets small-chunk, low-latency, web-like access; [[storj]] targets S3-compatible hot object storage.
+- **Fixed-`n` coding vs rateless coding.** Despite churning, unpredictable peer availability sounding like a natural fit for rateless [[fountain-codes]] (no need to know `n` in advance), both [[storj]] and [[walrus]] chose fixed-`n` [[reed-solomon]] in production — Walrus's v1 paper even proposed RaptorQ before shipping RS. This suggests MDS optimality and mature tooling outweigh rateless convenience once a DSN's storage "channel" is provisioned well enough to fix `n`, though it's an inference from two examples rather than a general law.
 
 ## Open tensions / contradictions
 
@@ -49,3 +50,4 @@ The four networks in this wiki, plus the [[walrus]] and [[ipfs]] reference point
 - [[filecoin-spec]] — proof-backed, blockchain-coordinated model
 - [[arweave-yellow-paper]], [[arweave-2-9]] — permanent-storage / blockweave model
 - [[book-of-swarm]], [[swarm-whitepaper]], [[swarm-protocol-spec]] — chunk/Kademlia/postage model
+- [[erasure-coding-algorithms-comparison]] — fountain-codes-vs-RS framing for the fixed-`n` vs rateless axis
